@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>多机调度问题 - Welcome to the air029&#39;s homepage!</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="air029,"> 
+    <meta name="description" content="Feel free and have fun!,问题描述有n个作业和m台相同设备，每个作业i可选择一台设备进行加工，加工时间为ti。每台机器一次只能加工一个作业。编写算法，实现对作业的调度，使得n个作业的等待时间和最小。
+问题分析多机调度问题要求,"> 
+    <meta name="author" content="air029"> 
+    <link rel="alternative" href="atom.xml" title="Welcome to the air029&#39;s homepage!" type="application/atom+xml"> 
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Welcome to the air029&#39;s homepage!</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://air029.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">多机调度问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">多机调度问题</h1>
+        <div class="stuff">
+            <span>十一月 10, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>有n个作业和m台相同设备，每个作业i可选择一台设备进行加工，加工时间为ti。每台机器一次只能加工一个作业。编写算法，实现对作业的调度，使得n个作业的等待时间和最小。</p>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><p>多机调度问题要求给出一种作业调度方案，使做给n个作业在尽可能短的时间内由m台机器加工处理完成。这个问题是NP完全问题，用贪心选择策略可以设计出较好的近似算法。当n&lt;=m时，将作业依次分给机器即可。当n&gt;m时，首先将n个作业依照其所需的时间从大到小排序。然后依次顺序将作业分配给空闲的机器。</p>
+<h3 id="算法设计"><a href="#算法设计" class="headerlink" title="算法设计"></a>算法设计</h3><ul>
+<li>利用结构体储存数据</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">task</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> order;</span><br><span class="line">	<span class="keyword">int</span> time;</span><br><span class="line"> &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">machine</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> task_order[MAX];</span><br><span class="line"> 	<span class="keyword">int</span> tasks;</span><br><span class="line"> 	<span class="keyword">int</span> work_time;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数原型</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(task t[], <span class="keyword">int</span> t_num)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Greedy</span><span class="params">(task t[], machine m[], <span class="keyword">int</span> t_num, <span class="keyword">int</span> m_num)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将任务按照时间从大到小排序</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(task t[], <span class="keyword">int</span> t_num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	task temp;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t_num - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t_num - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(t[j].time &lt; t[j+<span class="number">1</span>].time)</span><br><span class="line">			&#123;</span><br><span class="line">				temp = t[j];</span><br><span class="line">				t[j] = t[j+<span class="number">1</span>];</span><br><span class="line">				t[j+<span class="number">1</span>] = temp;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>贪心算法。将t_num个排好序的任务分配给空闲的机器。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Greedy</span><span class="params">(task t[], machine m[], <span class="keyword">int</span> t_num, <span class="keyword">int</span> m_num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> min_machine, min_time;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//---------------找到最小工作时间的机器-------------- </span></span><br><span class="line">		min_machine = <span class="number">0</span>;</span><br><span class="line">		min_time = m[<span class="number">0</span>].work_time;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m_num; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(m[j].work_time &lt; min_time)</span><br><span class="line">			&#123;</span><br><span class="line">				min_time = m[j].work_time;</span><br><span class="line">				min_machine = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//-----------------将任务加入待执行列表-------------- </span></span><br><span class="line">		m[min_machine].work_time = m[min_machine].work_time + t[i].time;</span><br><span class="line">		<span class="keyword">int</span> p = m[min_machine].tasks;</span><br><span class="line">		m[min_machine].task_order[p] = t[i].order;</span><br><span class="line">		m[min_machine].tasks++;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 30<span class="comment">//每个机器可以处理的最大任务个数 </span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">task</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> order;</span><br><span class="line">	<span class="keyword">int</span> time;</span><br><span class="line"> &#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">machine</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> task_order[MAX];</span><br><span class="line"> 	<span class="keyword">int</span> tasks;</span><br><span class="line"> 	<span class="keyword">int</span> work_time;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> task_num, machine_num;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(task t[], <span class="keyword">int</span> t_num)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Greedy</span><span class="params">(task t[], machine m[], <span class="keyword">int</span> t_num, <span class="keyword">int</span> m_num)</span></span>;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> 	<span class="comment">//---------初始化参数------------</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入机器个数："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; machine_num;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入任务个数："</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; task_num;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入每个任务所需时间:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	task* t = <span class="keyword">new</span> task[task_num];</span><br><span class="line">	machine* m = <span class="keyword">new</span> machine[machine_num];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; task_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		t[i].order = i+<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; t[i].time;</span><br><span class="line">	 &#125; </span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; machine_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		m[i].tasks = <span class="number">0</span>;</span><br><span class="line">		m[i].work_time = <span class="number">0</span>;</span><br><span class="line">	 &#125; </span><br><span class="line">	 </span><br><span class="line">	<span class="comment">//-----------确认参数-------------</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"机器个数："</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; machine_num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"任务个数："</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; task_num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"每个任务所需时间:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; task_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"任务"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">"所需时间："</span>; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt;  t[i].time &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	 &#125; </span><br><span class="line">	 </span><br><span class="line">	<span class="comment">//-------------给任务排序、花费时间较长者优先-----------</span></span><br><span class="line">	Sort(t, task_num);</span><br><span class="line">	<span class="comment">//-------------------贪心算法---------------------------- </span></span><br><span class="line">	Greedy(t, m, task_num, machine_num);</span><br><span class="line">	<span class="comment">//-------------------计算工作时间---------------------------</span></span><br><span class="line">	<span class="keyword">int</span> time = m[<span class="number">0</span>].work_time; </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; machine_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(m[i].work_time &gt; time)</span><br><span class="line">		&#123;</span><br><span class="line">			time = m[i].work_time;</span><br><span class="line">		&#125;</span><br><span class="line">	 &#125; </span><br><span class="line">	<span class="comment">//--------------------输出结果--------------------------</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"结果："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"最小花费时间为:"</span> &lt;&lt; time &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"任务安排："</span> &lt;&lt;  <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; machine_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"机器"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">"： "</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m[i].tasks; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"任务"</span> &lt;&lt; m[i].task_order[j] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		 &#125; </span><br><span class="line">	 &#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(task t[], <span class="keyword">int</span> t_num)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> 	task temp;</span><br><span class="line"> 	</span><br><span class="line"> 	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t_num - <span class="number">1</span>; i++)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t_num - i - <span class="number">1</span>; j++)</span><br><span class="line"> 		&#123;</span><br><span class="line"> 			<span class="keyword">if</span>(t[j].time &lt; t[j+<span class="number">1</span>].time)</span><br><span class="line"> 			&#123;</span><br><span class="line"> 				temp = t[j];</span><br><span class="line"> 				t[j] = t[j+<span class="number">1</span>];</span><br><span class="line"> 				t[j+<span class="number">1</span>] = temp;</span><br><span class="line">			 &#125;</span><br><span class="line">		 &#125;</span><br><span class="line">	 &#125;</span><br><span class="line">  &#125; </span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">Greedy</span><span class="params">(task t[], machine m[], <span class="keyword">int</span> t_num, <span class="keyword">int</span> m_num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> min_machine, min_time;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t_num; i++)</span><br><span class="line">	&#123;</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//---------------找到最小工作时间的机器-------------- </span></span><br><span class="line">		min_machine = <span class="number">0</span>;</span><br><span class="line">		min_time = m[<span class="number">0</span>].work_time;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m_num; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(m[j].work_time &lt; min_time)</span><br><span class="line">			&#123;</span><br><span class="line">				min_time = m[j].work_time;</span><br><span class="line">				min_machine = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//-----------------将任务加入待执行列表-------------- </span></span><br><span class="line">		m[min_machine].work_time = m[min_machine].work_time + t[i].time;</span><br><span class="line">		<span class="keyword">int</span> p = m[min_machine].tasks;</span><br><span class="line">		m[min_machine].task_order[p] = t[i].order;</span><br><span class="line">		m[min_machine].tasks++;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="/.io//%E5%A4%9A%E6%9C%BA%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98%5C3-1.PNG" alt="3-1"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
