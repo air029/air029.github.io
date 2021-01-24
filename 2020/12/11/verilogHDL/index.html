@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>verilogHDL - Welcome to the air029&#39;s homepage!</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="air029,"> 
+    <meta name="description" content="Feel free and have fun!,Verilo HDLinfo1参考资料
+https://blog.csdn.net/cristy_chen/article/details/106019086
+
+模块的一般语法结构123456789,"> 
+    <meta name="author" content="air029"> 
+    <link rel="alternative" href="atom.xml" title="Welcome to the air029&#39;s homepage!" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Welcome to the air029&#39;s homepage!</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://air029.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">verilogHDL</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">verilogHDL</h1>
+        <div class="stuff">
+            <span>十二月 11, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Verilo-HDL"><a href="#Verilo-HDL" class="headerlink" title="Verilo HDL"></a>Verilo HDL</h1><h2 id="info1"><a href="#info1" class="headerlink" title="info1"></a>info1</h2><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://blog.csdn.net/cristy_chen/article/details/106019086" target="_blank" rel="noopener">https://blog.csdn.net/cristy_chen/article/details/106019086</a></li>
+</ul>
+<h3 id="模块的一般语法结构"><a href="#模块的一般语法结构" class="headerlink" title="模块的一般语法结构"></a>模块的一般语法结构</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">设计块</span><br><span class="line"><span class="keyword">module</span> 模块名（端口名<span class="number">1</span>，端口名<span class="number">2</span>，…）；</span><br><span class="line">        端口类型说明（<span class="keyword">input</span>，<span class="keyword">output</span>，<span class="keyword">inout</span>）；</span><br><span class="line">        参数定义（可选）；</span><br><span class="line">        数据类型定义（<span class="keyword">wire</span>，<span class="keyword">reg</span>等）；</span><br><span class="line">……………………………说明部分…………………………………</span><br><span class="line">        实例引用低次层模块和基本门级元件；</span><br><span class="line">        连续赋值语句（<span class="keyword">assign</span>）；</span><br><span class="line">        过程块结构（<span class="keyword">initial</span>和<span class="keyword">always</span>）</span><br><span class="line">        行为描述语句；</span><br><span class="line">        任务和函数；</span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line">……………………逻辑功能描述部分，顺序任意………………………</span><br><span class="line"><span class="keyword">inout</span>：双向端口</span><br><span class="line">凡是在模块名后面圆括号中出现的端口名都必须明确地说明其端口类型</span><br><span class="line">寄存器类型<span class="keyword">reg</span> 连线类型<span class="keyword">wire</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200509150409310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0eV9DaGVu,size_16,color_FFFFFF,t_70" alt="2选1数据选择器逻辑图"></p>
+<p>样例：2选1数据选择器</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> Mux2tol_structural(a, b, sel, out);        <span class="comment">//1995年版本</span></span><br><span class="line">        <span class="keyword">input</span> a, b, sel;                <span class="comment">//输入端口声明</span></span><br><span class="line">        <span class="keyword">output</span> out;                   <span class="comment">//输出端口声明</span></span><br><span class="line">        <span class="keyword">wire</span> nsel, a1, b1;        <span class="comment">//内部节点声明</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//电路逻辑功能描述</span></span><br><span class="line">        <span class="keyword">not</span> U1(nsel, sel);        <span class="comment">//调用名U1可省略；调用名（输出端口，输入端口1，输入端口2，…）</span></span><br><span class="line">        <span class="keyword">and</span> U2（b1, b, nsel);</span><br><span class="line">        <span class="keyword">and</span> U3（a1, a, sel);</span><br><span class="line">        <span class="keyword">or</span> U4（out, a1, b1);</span><br><span class="line"><span class="keyword">endmodule</span>        <span class="comment">//无分号</span></span><br><span class="line">修订后的Verilog HDL标准中，定义模块端口可写成：</span><br><span class="line"><span class="keyword">module</span> Mux2tol_structural(</span><br><span class="line">        <span class="keyword">input</span> a, b, sel,                <span class="comment">//输入端口声明，后面是逗号</span></span><br><span class="line">        <span class="keyword">output</span> out                   <span class="comment">//输出端口声明，无逗号</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">数据流风格描述方式</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> Mux2tol_dataflow(a, b, sel, out);</span><br><span class="line">        <span class="keyword">input</span> a, b, sel;                <span class="comment">//输入端口声明</span></span><br><span class="line">        <span class="keyword">output</span> out;                   <span class="comment">//输出端口声明</span></span><br><span class="line">        <span class="keyword">wire</span> out;        <span class="comment">//变量数据类型声明</span></span><br><span class="line"><span class="comment">//电路功能能描述。变量out的数据类型必须是wire型</span></span><br><span class="line">        <span class="keyword">assign</span> out = (~sel &amp; b) | (sel &amp; a);        <span class="comment">//或out = sel?a:b;</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span>是关键词，是对变量赋值的意思</span><br><span class="line">连续赋值语句的特点：方程式右边的输入变量受到持续监控，任何一个变量发生变化，整个表达式将被重新计算，并将变化值赋给左边的线网变量。</span><br><span class="line"></span><br><span class="line">行为风格的描述方式</span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> Mux2tol_bh1(a, b, sel, out);</span><br><span class="line">        <span class="keyword">input</span> a, b, sel;                <span class="comment">//输入端口声明</span></span><br><span class="line">        <span class="keyword">output</span> out;                   <span class="comment">//输出端口声明</span></span><br><span class="line">        <span class="keyword">reg</span> out;        <span class="comment">//变量数据类型声明</span></span><br><span class="line"><span class="comment">//电路功能能描述</span></span><br><span class="line">        <span class="keyword">always</span> @(sel <span class="keyword">or</span> a <span class="keyword">or</span> b)        <span class="comment">//无分号</span></span><br><span class="line">        <span class="keyword">if</span>(sel == <span class="number">1</span>)</span><br><span class="line">                out = a;</span><br><span class="line">        <span class="keyword">else</span>    out = b;</span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//或</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> Mux2tol_bh1(a, b, sel, out);</span><br><span class="line">        <span class="keyword">input</span> a, b, sel;                <span class="comment">//输入端口声明</span></span><br><span class="line">        <span class="keyword">output</span> out;                   <span class="comment">//输出端口声明</span></span><br><span class="line">        <span class="keyword">reg</span> out;        <span class="comment">//变量数据类型声明</span></span><br><span class="line"><span class="comment">//电路功能能描述</span></span><br><span class="line">        <span class="keyword">always</span> @(sel <span class="keyword">or</span> a <span class="keyword">or</span> b)        <span class="comment">//无分号，修订后的Verilog HDL：always@(sel, a, b) / always@(*)</span></span><br><span class="line">        <span class="keyword">case</span>(sel)</span><br><span class="line">                <span class="number">1</span>’b0:out = b;</span><br><span class="line">                <span class="number">1</span>’b1:out = a;</span><br><span class="line">        <span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br><span class="line">行为描述的标识是<span class="keyword">always</span>语句，<span class="keyword">always</span>是循环执行语句，后面跟着条件@(敏感变量) 即括号中的任一输入变量发生变化时，后面的过程赋值语句就会被执行一次，执行完最后一条语句后，执行挂起。</span><br><span class="line"><span class="keyword">always</span>内部被赋值的变量都要声明为<span class="keyword">reg</span>类型</span><br></pre></td></tr></table></figure>
+
+<h2 id="info2"><a href="#info2" class="headerlink" title="info2"></a>info2</h2><h3 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://blog.csdn.net/qq_34767784/article/details/105397213?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-2.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-2.nonecase" target="_blank" rel="noopener">https://blog.csdn.net/qq_34767784/article/details/105397213?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-2.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-2.nonecase</a></li>
+</ul>
+<h1 id="MARS"><a href="#MARS" class="headerlink" title="MARS"></a>MARS</h1><h2 id="info1-1"><a href="#info1-1" class="headerlink" title="info1"></a>info1</h2><h3 id="参考资料-2"><a href="#参考资料-2" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://blog.csdn.net/pursue_my_life/article/details/102460221?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control" target="_blank" rel="noopener">https://blog.csdn.net/pursue_my_life/article/details/102460221?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control</a></li>
+</ul>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>An IDE for MIPS Assembly Language Programming.<br>MARS是一个轻量级的交互式开发环境（IDE），用于使用MIPS汇编语言进行编程，旨在与Patterson和Hennessy的计算机组织和设计一起用于教育级别。）</p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><blockquote>
+<p>在了解基本使用之前，需要了解一些基础知识<br>宏汇编语言有3类基本指令：符号指令、伪指令和宏指令。</p>
+</blockquote>
+<ul>
+<li><h4 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h4></li>
+</ul>
+<p>伪指令只为汇编程序将符号指令翻译成机器指令提供信息，没有 与它们对应的机器指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.set push/.set pop等等。</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="宏指令"><a href="#宏指令" class="headerlink" title="宏指令"></a>宏指令</h5></li>
+</ul>
+<p>把一个指令序列定义为一条宏指令, 便于书写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">指令</span><br><span class="line">li $t1,40</span><br><span class="line">是一条伪指令，在汇编器中会转换成</span><br><span class="line">addi $t1,$zero,40</span><br><span class="line">但是</span><br><span class="line">li $t1,-4000000</span><br><span class="line">因为数字太大，需要拆开，则会被转换成</span><br><span class="line">lui $at,0xffc2</span><br><span class="line">ori $t1,$at,0xf700</span><br><span class="line">这之中，$at就作为一个中间变量来用的</span><br><span class="line">12345678910</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="符号指令"><a href="#符号指令" class="headerlink" title="符号指令"></a>符号指令</h5></li>
+</ul>
+<h3 id="MIPS程序结构"><a href="#MIPS程序结构" class="headerlink" title="MIPS程序结构"></a>MIPS程序结构</h3><blockquote>
+<p>必须这样写 Mars 才能成功汇编</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">.text</span><br><span class="line"></span><br><span class="line">#开始你的 mips 代码</span><br><span class="line">main:</span><br><span class="line">#.......</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="Data-Declarations"><a href="#Data-Declarations" class="headerlink" title="Data Declarations"></a>Data Declarations</h5></li>
+</ul>
+<p>在.data指令之后：将程序将使用的数据存储在RAM中。</p>
+<ul>
+<li><h5 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h5></li>
+</ul>
+<p>在.text指令后：包括程序代码，其中程序代码的起点是main:指令，并用syscall结束程序。</p>
+<ul>
+<li><h5 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h5></li>
+</ul>
+<p>注释不用说了 ~注释符号是#</p>
+<h3 id="如何输入输出"><a href="#如何输入输出" class="headerlink" title="如何输入输出"></a>如何输入输出</h3><p>Use syscall to call operating system routine call, 把对应的系统服务编码放进v0 中， 再 syscall 就 可 以 调 用 相 应 的 系 统 服 务 。 系 统 调 用 是 操 作 系 统 提 供 的 一 组 服 务 。要使用系统调用，需要将调用代码放入v0中，再syscall就可以调用相应的系统服务。 系统调用是操作系统提供的一组服务。要使用系统调用，需要将调用代码放入<em>v</em>0中，再syscall就可以调用相应的系统服务。系统调用是操作系统提供的一组服务。要使用系统调用，需要将调用代码放入 v0寄存器以进行所需操作。如果系统调用有参数，则将它们放在a0-​ a2寄存器中。</p>
+<p>Syscall 是Mars 中输出的方式. <strong>通过将 $v0 设置成不同的值来在控制台输出 不同register中的值</strong>(会以不同的输出方式),<br>详情见下表:<br><a href="http://courses.missouristate.edu/KenVollmar/mars/Help/SyscallHelp.html" target="_blank" rel="noopener">http://courses.missouristate.edu/KenVollmar/mars/Help/SyscallHelp.html</a><br>如果懒得看，这里提供给一个最基本的程序范例:</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">.text</span><br><span class="line">main:</span><br><span class="line">    addi $a0 $zero 666</span><br><span class="line">    addi $v0 $zero 1 #v0设置为1,  代表 syscall 将输出 $a0 register 的值</span><br><span class="line">    syscall</span><br></pre></td></tr></table></figure>
+
+<p>结果输出: 666</p>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.data</span><br><span class="line">.text</span><br><span class="line">main:</span><br><span class="line">    li $v0 5 #v0设置为5,  代表 syscall 将从键盘缓冲区读入一个数进v0</span><br><span class="line">    syscall</span><br><span class="line"></span><br><span class="line">    add $a0 $v0 $zero</span><br><span class="line">    li $v0 1 #</span><br><span class="line">    syscall</span><br></pre></td></tr></table></figure>
+
+<h3 id="Mars-的新手”陷阱”"><a href="#Mars-的新手”陷阱”" class="headerlink" title="Mars 的新手”陷阱”"></a>Mars 的新手”陷阱”</h3><ul>
+<li><h5 id="main-函数的返回值"><a href="#main-函数的返回值" class="headerlink" title="main 函数的返回值"></a>main 函数的返回值</h5></li>
+</ul>
+<p>c语言中 main 函数为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   func();</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 MIPS 中要写成如下形式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main:</span><br><span class="line">jal func</span><br><span class="line">addi $v0 $v0 10 #v0设置为10,  代表 syscall 将执行 exit</span><br><span class="line">syscall</span><br></pre></td></tr></table></figure>
+
+<p>这是因为main 没有其调用者, 所以 $ra 为 0, 关于 $ra, The correct way to end a program on MARS is using the “exit” syscall.<br>即:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">addi $v0 $v0 10</span><br><span class="line">syscall</span><br></pre></td></tr></table></figure>
+
+<p>并且将main 过程放在所有函数之前.</p>
+<ul>
+<li><h5 id="mips-调用子程序"><a href="#mips-调用子程序" class="headerlink" title="mips 调用子程序"></a>mips 调用子程序</h5></li>
+</ul>
+<ul>
+<li>主程序与子程序之间的转返<br>调用:jal func<br>返回:jr $ra</li>
+<li>主程序与子程序间的信息传递<br>通过公用寄存器实现</li>
+<li>主程序和子程序公用寄存器的问题<br>使用栈解决</li>
+</ul>
+<h1 id="MIPS模拟器MARS汇编入门"><a href="#MIPS模拟器MARS汇编入门" class="headerlink" title="MIPS模拟器MARS汇编入门"></a>MIPS模拟器MARS汇编入门</h1><h3 id="参考资料-3"><a href="#参考资料-3" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://blog.csdn.net/qq_42556934/article/details/106657752?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control" target="_blank" rel="noopener">https://blog.csdn.net/qq_42556934/article/details/106657752?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></li>
+</ul>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>B站有个入门视频，文中的例子来自<a href="https://www.bilibili.com/video/BV16W411e7ss/?spm_id_from=333.788.videocard.1" target="_blank" rel="noopener">MIPS汇编语言小科普</a></p>
+<p>我会在代码中添加详细的注解，方便自己日后查看。这里使用的是MARS模拟器，很小巧方便。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjMxODI1OC1iZThmMTI5OGZiNWNmZGJmLkpQRw?x-oss-process=image/format,png" alt="MARS模拟器"></p>
+<h3 id="三段小程序"><a href="#三段小程序" class="headerlink" title="三段小程序"></a>三段小程序</h3><h4 id="1-Hello-World"><a href="#1-Hello-World" class="headerlink" title="(1) Hello World!"></a>(1) Hello World!</h4><p>C语言的Hello World! 如何转变为汇编语言呢？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>汇编语言实际上是对寄存器进行操作，需要向外输出时，应调用syscall指令，配合v0(2号寄存器)的值为4时，输出a0(4号寄存器)保存地址处的”字符串”。字符串需要保存在.data字段，程序保存在.text字段，相当于main确定程序开始的地方。(#为注释)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> .data           #数据字段，保存要打印的字符串</span><br><span class="line">  msg: .ascii &quot;Hello World!\0&quot;  #msg记录了数据的地址，.ascii告诉计算机编码类型</span><br><span class="line">                                #\0告诉计算机这里字符串结束</span><br><span class="line">.text          #代码字段，表示程序的入口，相当于main</span><br><span class="line">  la $a0,msg   #$a0寄存器加载字段的地址，la表示load address加载地址指令</span><br><span class="line">  li $v0,4     # $v0寄存器加载4，表示要显示字符串，li表示load immediate加载立即数指令</span><br><span class="line">  syscall      # 调用字符串输出</span><br></pre></td></tr></table></figure>
+
+<p>总体来看，汇编代码分成两段，数据段和代码段。printf输出函数需要两个寄存器v0, a0配合syscall指令完成。</p>
+<h4 id="2-IF-ELSE"><a href="#2-IF-ELSE" class="headerlink" title="(2) IF-ELSE"></a>(2) IF-ELSE</h4><p>输入两个数，如果前者大，输出YES，反之NO。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b;		</span><br><span class="line">  	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">	<span class="keyword">if</span>(a&gt;b)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"YES"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"NO"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里同样要定义数据字段保存“YES”，“NO”，但多了一个终端输入部分，同样需要用syscall，但需要改变v0加载的值，变为5，输入的数据会保存在v0中。另外需要一个比较跳转语句bgt(greater 就跳)。最后需要一个程序结束命令，相当于return 0，同样调用syscall，但v0改为10。具体下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">.data              #数据段保存输出字符串，注意加\0</span><br><span class="line">  msg_yes: .ascii &quot;YES\0&quot; </span><br><span class="line">  msg_no:  .ascii &quot;NO\0&quot;  </span><br><span class="line">  </span><br><span class="line">.text               #程序段相当于main入口</span><br><span class="line">  li $v0,5          #scanf(&quot;%d&quot;,&amp;a);  t0保存a的值</span><br><span class="line">  syscall </span><br><span class="line">  move $t0,$v0  </span><br><span class="line"></span><br><span class="line">  li $v0,5          #scanf(&quot;%d&quot;,&amp;b);  t1保存b的值</span><br><span class="line">  syscall </span><br><span class="line">  move $t1,$v0 </span><br><span class="line"></span><br><span class="line">  bgt $t0,$t1,s1    #a&gt;b就跳转到标签s1，记录了printf(&quot;YES&quot;)程序的开始地址</span><br><span class="line">  la $a0,msg_no     #printf(&quot;NO&quot;);</span><br><span class="line">  li $v0,4</span><br><span class="line">  syscall </span><br><span class="line"></span><br><span class="line">  j stop            #直接跳转到结束语句stop</span><br><span class="line"></span><br><span class="line">s1:</span><br><span class="line">  la $a0,msg_yes     #printf(&quot;YES&quot;);</span><br><span class="line">  li $v0,4</span><br><span class="line">  syscall </span><br><span class="line"></span><br><span class="line">  stop:             #结束程序语句，类似return 0;</span><br><span class="line">  li $v0 10</span><br><span class="line">  syscall</span><br></pre></td></tr></table></figure>
+
+<p>这里的j指令表示直接跳转，一般跟某个标签作为跳转地址，不会具体写内存地址。如果希望预留空间指定某个地址写程序，可以用.ktext 加地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.ktext 0x0100  #stop标签的地址在内存0x100的位置上</span><br><span class="line"> stop:   </span><br><span class="line">  li $v0 10</span><br><span class="line">  syscall</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-WHILE"><a href="#3-WHILE" class="headerlink" title="(3) WHILE"></a>(3) WHILE</h4><p>计算1+2+…+100并输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> s=<span class="number">0</span>;		</span><br><span class="line">  	<span class="keyword">while</span> (i&lt;=<span class="number">100</span>)&#123;</span><br><span class="line">		s=s+i;</span><br><span class="line">  		i=i+<span class="number">1</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">  	<span class="built_in">printf</span>(<span class="string">"%d"</span>,s);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们需要两个寄存器保存i，s的值，while循环通过跳转指令，循环里面用加法指令，最后输出整型并返回，输出整型需要让v0=1，a0=s(和字符串不一样v0=4,a0是地址)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.text              #main 入口</span><br><span class="line">  li $t0,1         #t0表示i;t1表示s</span><br><span class="line">  li $t1,0</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">  add $t1,$t1,$t0  #s=s+i</span><br><span class="line">  add $t0,$t0,1    #i=i+1</span><br><span class="line">  ble $t0,100,loop #while(i&lt;=100) .ble=branch if less or equal</span><br><span class="line"></span><br><span class="line">  move $a0,$t0     #寄存器之间数据转移用move</span><br><span class="line">  li $v0,1         #打印整数</span><br><span class="line">  syscall          #printf(&quot;%d&quot;,s)</span><br><span class="line"></span><br><span class="line">  li $v0, 10       #return 0;</span><br><span class="line">  syscall</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是，这里没有数据段，不是必须的。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>mips汇编代码一般分两端，数据段和代码段。其他段详情参见模拟器Help-&gt;MIPS-&gt;Directives</li>
+<li>输入输出返回等指令需要调用syscall，配合v0和a0，其他详情参加模拟器Help-&gt;MIPS-&gt;Syscalls</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>v0</th>
+<th>a0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输出整型</td>
+<td>1</td>
+<td>待输出整型</td>
+</tr>
+<tr>
+<td>输出字符串</td>
+<td>4</td>
+<td>待输出字符串地址</td>
+</tr>
+<tr>
+<td>输入整型</td>
+<td>5</td>
+<td>无</td>
+</tr>
+<tr>
+<td>返回</td>
+<td>10</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<ul>
+<li>用到的跳转指令：bgt(branch if greater than)，j(jump)，ble(branch if less or equal)</li>
+<li>用到的加载指令：move(寄存器间数据移动)，li(加载立即数)，la(加载地址)</li>
+<li>用到的运算指令：add</li>
+</ul>
+<p><strong>更进一步的学习可以参看pdf：<a href="https://cupola.gettysburg.edu/cgi/viewcontent.cgi?article=1001&context=oer" target="_blank" rel="noopener">Introduction To MIPS Assembly Language Programming</a></strong></p>
+<h1 id="modelsim"><a href="#modelsim" class="headerlink" title="modelsim"></a>modelsim</h1><h1 id="ModelSim仿真入门之一：软件介绍"><a href="#ModelSim仿真入门之一：软件介绍" class="headerlink" title="ModelSim仿真入门之一：软件介绍"></a>ModelSim仿真入门之一：软件介绍</h1><h3 id="参考资料-4"><a href="#参考资料-4" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://blog.csdn.net/childbor/article/details/78091450" target="_blank" rel="noopener">https://blog.csdn.net/childbor/article/details/78091450</a></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Verilo-HDL"><span class="toc-number">1.</span> <span class="toc-text">Verilo HDL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#info1"><span class="toc-number">1.1.</span> <span class="toc-text">info1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">1.1.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块的一般语法结构"><span class="toc-number">1.1.2.</span> <span class="toc-text">模块的一般语法结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#info2"><span class="toc-number">1.2.</span> <span class="toc-text">info2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MARS"><span class="toc-number">2.</span> <span class="toc-text">MARS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#info1-1"><span class="toc-number">2.1.</span> <span class="toc-text">info1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料-2"><span class="toc-number">2.1.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">2.1.2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础知识"><span class="toc-number">2.1.3.</span> <span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#伪指令"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">伪指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#宏指令"><span class="toc-number">2.1.3.1.1.</span> <span class="toc-text">宏指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#符号指令"><span class="toc-number">2.1.3.1.2.</span> <span class="toc-text">符号指令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MIPS程序结构"><span class="toc-number">2.1.4.</span> <span class="toc-text">MIPS程序结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Data-Declarations"><span class="toc-number">2.1.4.0.1.</span> <span class="toc-text">Data Declarations</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Code"><span class="toc-number">2.1.4.0.2.</span> <span class="toc-text">Code</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Comments"><span class="toc-number">2.1.4.0.3.</span> <span class="toc-text">Comments</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何输入输出"><span class="toc-number">2.1.5.</span> <span class="toc-text">如何输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#输出"><span class="toc-number">2.1.5.1.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入"><span class="toc-number">2.1.5.2.</span> <span class="toc-text">输入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mars-的新手”陷阱”"><span class="toc-number">2.1.6.</span> <span class="toc-text">Mars 的新手”陷阱”</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#main-函数的返回值"><span class="toc-number">2.1.6.0.1.</span> <span class="toc-text">main 函数的返回值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mips-调用子程序"><span class="toc-number">2.1.6.0.2.</span> <span class="toc-text">mips 调用子程序</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MIPS模拟器MARS汇编入门"><span class="toc-number">3.</span> <span class="toc-text">MIPS模拟器MARS汇编入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料-3"><span class="toc-number">3.0.1.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">3.0.2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三段小程序"><span class="toc-number">3.0.3.</span> <span class="toc-text">三段小程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Hello-World"><span class="toc-number">3.0.3.1.</span> <span class="toc-text">(1) Hello World!</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-IF-ELSE"><span class="toc-number">3.0.3.2.</span> <span class="toc-text">(2) IF-ELSE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-WHILE"><span class="toc-number">3.0.3.3.</span> <span class="toc-text">(3) WHILE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.0.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#modelsim"><span class="toc-number">4.</span> <span class="toc-text">modelsim</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ModelSim仿真入门之一：软件介绍"><span class="toc-number">5.</span> <span class="toc-text">ModelSim仿真入门之一：软件介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料-4"><span class="toc-number">5.0.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
